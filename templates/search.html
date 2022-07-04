@@ -1,0 +1,28 @@
+<!-- 
+ Title: How to Create a Food Website with an API
+Author: RapidAPI 
+Date: 2020
+Code version: n/a
+https://spoonacular.com/food-api
+-->
+
+{% extends 'base.html' %}
+{% block title %} FUD - Search {% endblock %}
+{% block body %}
+
+<center>
+  <h2 style="padding-top: 3%;">
+      FUD <br>
+      <small class="text-muted"> Enter ingredients separated by commas to start looking for recipes! </small>
+  </h2>
+  <br><br>
+  <form action="/recipes">
+      <div class="input-group mb-3" style="max-width: 50%;">
+          <input type="text" class="form-control" placeholder="Eggs, Milk, Bread" aria-label="Ingridients" aria-describedby="button-addon2" name="ingridients">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+          </div>          
+      </div>
+  </form>
+</center>
+{% endblock %}

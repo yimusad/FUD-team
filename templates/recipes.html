@@ -1,0 +1,29 @@
+<!-- 
+ Title: How to Create a Food Website with an API
+Author: RapidAPI 
+Date: 2020
+Code version: n/a
+https://spoonacular.com/food-api
+-->
+{% extends 'base.html' %}
+{% block title %} Search Recipe Results {% endblock %}
+{% block body %}
+<h2 style="text-align: left"> <a href="/" style="text-decoration: underline; color:rgb(255, 123, 0)"> Results: </a></h2>
+<div style="margin-left:35%;">
+  <ul class="list-unstyled">  
+      {% for recipe in recipes %}
+          <li class="media">
+              <img src="{{recipe['image']}}" class="align-self-center mr-3" alt="..." width="30%" height="30%">
+              <div class="media-body">
+                  <h5 class="mt-0 mb-1"><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+
+                  <br> Number of entered ingredients: {{recipe['usedIngredientCount']}} <br>
+                  <br> Preparation Time (in minutes): {{recipe['cookingMinutes']}} <br>
+        
+
+              </div>
+          </li> <br>
+      {% endfor %}
+  </ul>
+</div >
+{% endblock %}
